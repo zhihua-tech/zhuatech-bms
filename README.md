@@ -55,3 +55,7 @@ docker compose up --build
 </p>
 
 关键词：知华科技 BMS、智慧楼宇系统、楼宇自控、能源管理、设备告警、移动运维、Java BMS、上海软件定制开发。
+
+## 室内舒适度联动控制
+
+新增 `POST /api/bms/insights/indoor-comfort-control`，根据温度、湿度、二氧化碳、占用人数和设备故障输出舒适度分及 `NORMAL / ADJUST / MAINTENANCE / VENTILATE_NOW`，同时给出新风、除湿、维修和无人节能动作。
