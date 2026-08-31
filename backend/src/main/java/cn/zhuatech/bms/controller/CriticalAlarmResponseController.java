@@ -1,0 +1,3 @@
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
+package cn.zhuatech.bms.controller;import cn.zhuatech.bms.common.ApiResponse;import cn.zhuatech.bms.service.CriticalAlarmResponseService;import jakarta.validation.Valid;import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/enterprise/bms") public class CriticalAlarmResponseController{private final CriticalAlarmResponseService service;public CriticalAlarmResponseController(CriticalAlarmResponseService service){this.service=service;}@PostMapping("/critical-alarm-response")public ApiResponse<CriticalAlarmResponseService.Assessment>assess(@Valid @RequestBody CriticalAlarmResponseService.Request request){return ApiResponse.ok(service.assess(request));}}

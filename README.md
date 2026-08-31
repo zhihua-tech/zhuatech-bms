@@ -59,3 +59,7 @@ docker compose up --build
 ## 室内舒适度联动控制
 
 新增 `POST /api/bms/insights/indoor-comfort-control`，根据温度、湿度、二氧化碳、占用人数和设备故障输出舒适度分及 `NORMAL / ADJUST / MAINTENANCE / VENTILATE_NOW`，同时给出新风、除湿、维修和无人节能动作。
+
+## 企业级关键告警响应
+
+新增 `POST /api/enterprise/bms/critical-alarm-response`，覆盖告警确认、安全状态、疏散、冗余、工单和响应 SLA，返回 `RESPOND / ESCALATE / BLOCKED`。详见 [关键告警说明](docs/ENTERPRISE_CRITICAL_ALARM.md)。
