@@ -10,8 +10,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class IndoorComfortControlService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result evaluate(Request request) {
         int risk = 0;
         if (request.temperatureCelsius() < 20 || request.temperatureCelsius() > 26) risk += 25;
@@ -37,6 +43,9 @@ public class IndoorComfortControlService {
             suggestedSetpoint, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String zoneCode,
                           @DecimalMin("-20") @DecimalMax("60") double temperatureCelsius,
                           @DecimalMin("0") @DecimalMax("100") double humidityPercent,
@@ -44,6 +53,9 @@ public class IndoorComfortControlService {
                           boolean hvacRunning, boolean equipmentFault,
                           @DecimalMin("-40") @DecimalMax("60") double outdoorTemperatureCelsius) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String zoneCode, int comfortScore, String decision,
                          double suggestedSetpointCelsius, List<String> actions) {}
 }

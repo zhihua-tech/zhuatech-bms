@@ -6,9 +6,15 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class IndoorComfortControlServiceTests {
     private final IndoorComfortControlService service = new IndoorComfortControlService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void requiresImmediateVentilationForHighCo2() {
         var result = service.evaluate(new IndoorComfortControlService.Request(
@@ -18,6 +24,9 @@ class IndoorComfortControlServiceTests {
         assertEquals(55, result.comfortScore());
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void keepsComfortableOccupiedZoneNormal() {
         var result = service.evaluate(new IndoorComfortControlService.Request(

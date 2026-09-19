@@ -8,8 +8,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class BuildingHealthService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public HealthResult assess(HealthRequest request) {
         int deductions = Math.min(25, Math.max(0, request.energyDeviation()) * 2)
             + Math.min(30, request.criticalAlarms() * 10)
@@ -29,10 +35,16 @@ public class BuildingHealthService {
         return new HealthResult(score, status, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record HealthRequest(@NotNull @Min(-100) @Max(100) Integer energyDeviation,
         @NotNull @Min(0) @Max(1000) Integer criticalAlarms,
         @NotNull @Min(0) @Max(10000) Integer offlineDevices,
         @NotNull @Min(0) @Max(100) Integer comfortRate,
         @NotNull @Min(0) @Max(10000) Integer maintenanceOverdue) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record HealthResult(int score, String status, List<String> actions) {}
 }
