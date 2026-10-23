@@ -1,0 +1,96 @@
+{
+  "slug": "bms",
+  "title": "楼宇告警恢复滞回与离线复核",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "value",
+      "label": "当前值",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "threshold",
+      "label": "高限阈值",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "deadband",
+      "label": "恢复死区",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "previous",
+      "label": "原状态",
+      "type": "ENUM",
+      "options": [
+        "NORMAL",
+        "ALARM"
+      ]
+    },
+    {
+      "key": "acknowledged",
+      "label": "已确认告警",
+      "type": "ENUM",
+      "options": [
+        "YES",
+        "NO"
+      ]
+    },
+    {
+      "key": "online",
+      "label": "传感器在线",
+      "type": "ENUM",
+      "options": [
+        "YES",
+        "NO"
+      ]
+    }
+  ],
+  "columns": [
+    {
+      "key": "clearThreshold",
+      "label": "恢复阈值"
+    },
+    {
+      "key": "calculatedState",
+      "label": "计算状态"
+    },
+    {
+      "key": "sourceUsable",
+      "label": "输入源可用"
+    }
+  ],
+  "description": "按高限阈值、恢复死区和原告警状态计算下一状态，传感器离线不能当作正常恢复。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-23",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "value": "75",
+        "threshold": "80",
+        "deadband": "5",
+        "previous": "NORMAL",
+        "acknowledged": "YES",
+        "online": "YES"
+      }
+    ]
+  }
+}

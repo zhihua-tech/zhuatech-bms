@@ -1,0 +1,50 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "clearThreshold": "#75",
+      "calculatedState": "NORMAL",
+      "sourceUsable": "true"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "value": "80",
+      "acknowledged": "NO"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "calculatedState": "ALARM"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "value": "78",
+      "previous": "ALARM"
+    },
+    "expected": {
+      "decision": "REVIEW"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "online": "NO"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "sourceUsable": "false"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "deadband": "81"
+    },
+    "expected": {},
+    "error": true
+  }
+]
